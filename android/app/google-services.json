@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "519884495350",
+    "project_id": "cinema-ce1b8",
+    "storage_bucket": "cinema-ce1b8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:519884495350:android:bd27db82e51595490ecfd7",
+        "android_client_info": {
+          "package_name": "com.cinema"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "519884495350-6mgh94hv0anthhi0ktd0v91pcdokv8mq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cinema",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "519884495350-dcdnoffh244gi5021uovahm76k7c72ro.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzMhrZykvex83wQiWlDlG2GVaoUkoE4qk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "519884495350-dcdnoffh244gi5021uovahm76k7c72ro.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

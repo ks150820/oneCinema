@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">cinema</string>
+    <string moduleConfig="true" name="CodePushDeploymentKey">FrPa0QNLnprhz5Fw9XUjHQGn39hjjRzWhK-hQ</string>
+</resources>
