@@ -1,4 +1,4 @@
-package com.cinema;
+package com.oneCinema;
 
 import android.os.Bundle;
 

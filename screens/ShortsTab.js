@@ -405,9 +405,9 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   lang: {
-    height: 130,
+    height: 150,
     width: 120,
-    backgroundColor: '#e03b8b',
+    backgroundColor: '#fff',
     position: 'absolute',
     top: 25,
     zIndex: 999,
@@ -416,7 +416,7 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
   },
   langText: {
-    color: '#fff',
+    color: '#000',
     fontSize: 20,
     textAlign: 'center',
     padding: 5,

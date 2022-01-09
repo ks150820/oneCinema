@@ -16,7 +16,6 @@ import {useSelector} from 'react-redux';
 import FeaturedMovies from '../Components/FeaturedMovies';
 import OTTHeaderImages from '../Components/OTTHeaderImages';
 import PushNotification from 'react-native-push-notification';
-
 import YouTube from 'react-native-youtube';
 import Quickly from '../Components/Quickly';
 

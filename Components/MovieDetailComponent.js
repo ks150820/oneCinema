@@ -213,7 +213,7 @@ const MovieDetailComponent = props => {
     if (supported) {
       await Linking.openURL(link);
     } else {
-      Alert.alert(`Don't know how to open the URL`);
+      Alert.alert("Server Error");
     }
   }, []);
 

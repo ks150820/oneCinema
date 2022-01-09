@@ -99,7 +99,7 @@ const MoviePosterLayout = props => {
     <TouchableNativeFeedback
       activeOpacity={0.5}
       onPress={() =>
-        props.navigation.navigate(props.nav, {
+        props.navigation.navigate('Movie Detail', {
           movieId: props.Key,
           title: props.title,
         })

@@ -234,29 +234,3 @@ const styles = StyleSheet.create({
     marginVertical: 4,
   },
 });
-
-{
-  /* <View style={{borderWidth: 1, borderColor: '#FFF', flex: 1}}>
-        {switchScreen ? (
-          <OttSpecificWebSeriesScreen />
-        ) : (
-          <OttSpecificMoviesScreen />
-        )}
-      </View>
-      {switchScreen ? (
-        <RNBounceable
-          style={[styles.button, styles.menu]}
-          onPress={() => setSwitchScreen((prevState) => !prevState)}>
-          <Icon name="play" color="#fff" size={30} />
-        </RNBounceable>
-      ) : (
-        <RNBounceable
-          style={[styles.button, styles.menu]}
-          onPress={() => setSwitchScreen((prevState) => !prevState)}>
-          <Image
-            source={require('../assets/icons/smart-tv.png')}
-            style={{width: 30, height: 30, resizeMode: 'contain'}}
-          />
-        </RNBounceable>
-      )} */
-}

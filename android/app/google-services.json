@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:519884495350:android:bd27db82e51595490ecfd7",
         "android_client_info": {
-          "package_name": "com.cinema"
+          "package_name": "com.oneCinema"
         }
       },
       "oauth_client": [
@@ -17,7 +17,7 @@
           "client_id": "519884495350-6mgh94hv0anthhi0ktd0v91pcdokv8mq.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.cinema",
+            "package_name": "com.oneCinema",
             "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
           }
         },

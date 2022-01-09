@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">cinema</string>
+    <string name="app_name">oneCinema</string>
     <string moduleConfig="true" name="CodePushDeploymentKey">FrPa0QNLnprhz5Fw9XUjHQGn39hjjRzWhK-hQ</string>
 </resources>

@@ -129,20 +129,9 @@ const LGOComponent = (props) => {
                 size={10}
               />
             </TouchableOpacity>
-            <View
-              style={{
-                flexDirection: 'row',
-                position: 'absolute',
-                bottom: 48,
-                width: 20,
-                backgroundColor: 'rgba(25,52,89,0.6)',
-                borderRadius: 20 / 2,
-                alignItems: 'center',
-                padding: 5,
-                justifyContent: 'center',
-              }}>
+            <View>
               {props.OTTlogo.map((data, index) => (
-                <View key={index} style={{margin: 2}}>
+                <View key={index}style={styles.ottLogo}>
                   <Image
                     source={{uri: data.logo}}
                     style={{
@@ -158,7 +147,7 @@ const LGOComponent = (props) => {
               style={{
                 position: 'absolute',
                 bottom: 48,
-                right: 0,
+                right: 5,
                 backgroundColor: 'rgba(25,52,89,0.6)',
                 padding: 3,
                 paddingTop: 0,
@@ -199,7 +188,7 @@ const LGOComponent = (props) => {
                   flexDirection: 'row',
                   justifyContent: 'space-between',
                 }}>
-                {props.ratings.map((item, index) => (
+                {props.ratings && props.ratings.map((item, index) => (
                   <View key={index} style={styles.flexRowRating}>
                     <Image
                       source={{uri: item.logo}}
@@ -236,7 +225,7 @@ export default LGOComponent;
 const styles = StyleSheet.create({
   MoviesScreen: {
     backgroundColor: '#000',
-    padding: 10,
+    padding: 5,
     marginTop: 20,
   },
 
@@ -293,7 +282,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(25,52,89,0.6)',
     alignItems: 'center',
     justifyContent: 'center',
-    height: 20,
+    height: 25,
     right: 7,
   },
   title: {
@@ -306,5 +295,16 @@ const styles = StyleSheet.create({
     alignItems: 'center',
 
     marginVertical: 4,
+  },
+  ottLogo: {
+    flexDirection: 'row',
+    position: 'absolute',
+    bottom: 48,
+    backgroundColor: 'rgba(25,52,89,0.6)',
+    borderRadius: 20 / 2,
+    alignItems: 'center',
+    justifyContent: 'center',
+    left: 5,
+    padding: 2,
   },
 });
