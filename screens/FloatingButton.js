@@ -75,33 +75,15 @@ const FloatingButton = props => {
   };
 
   const handlePress = useCallback(async link => {
-    // Checking if the link is supported for links with custom URL scheme.
-    const url = 'whatsapp://';
-    const supported = await Linking.canOpenURL(link);
-    console.log(supported);
-
-    if (supported) {
-      // Opening the link with some app, if the URL scheme is "http" the web link should be opened
-      // by some browser in the mobile
-      await Linking.openURL(link);
-    } else {
-      Alert.alert(`Don't know how to open the URL`);
+    try{
+     await Linking.openURL(link);
+    }catch(err){
+      Alert.alert("Server Error");
     }
   }, []);
 
   return (
     <View style={[styles.container, props.style]}>
-      {/* <TouchableWithoutFeedback>
-        <Animated.View style={[styles.button, styles.secondary, heartStyle]}>
-          <Foundation name="social-amazon" size={15} color="#f02a4b" />
-        </Animated.View>
-      </TouchableWithoutFeedback>
-      <TouchableWithoutFeedback>
-        <Animated.View style={[styles.button, styles.secondary, thumbStyle]}>
-          <MCI name="netflix" size={15} color="#f02a4b" />
-        </Animated.View>
-      </TouchableWithoutFeedback> */}
-
       {props.url.map((item, index) => (
         <TouchableWithoutFeedback
           key={index}

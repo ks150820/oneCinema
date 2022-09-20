@@ -11,6 +11,7 @@ import {
   TouchableOpacity,
   ImageBackground,
   Dimensions,
+  Alert,
 } from 'react-native';
 import RNBounceable from '@freakycoder/react-native-bounceable';
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -199,7 +200,6 @@ const MovieDetailComponent = props => {
 
         array.map(item => titlesArray.push(item.Key));
 
-        console.log('titlesArray =', titlesArray);
         dispatch(bookmarkTitle(titlesArray));
 
         dispatch(bookmarkData(array));
@@ -207,13 +207,11 @@ const MovieDetailComponent = props => {
   }
 
   //--endbookmark--//
-  const handlePress = useCallback(async link => {
-    const supported = await Linking.canOpenURL(link);
-
-    if (supported) {
-      await Linking.openURL(link);
-    } else {
-      Alert.alert("Server Error");
+  const handlePress = useCallback(async url => {
+    try {
+      await Linking.openURL(url);
+    } catch (err) {
+      Alert.alert('Server Error');
     }
   }, []);
 
@@ -308,7 +306,7 @@ const MovieDetailComponent = props => {
 
   const MovieShare = async (movieId, image) => {
     const shareOptions = {
-      message: `https://app.cinema.com/Details/${movieId}`,
+      message: `https://app.oneCinema.com/Details/${movieId}`,
     };
 
     try {
@@ -527,17 +525,17 @@ const MovieDetailComponent = props => {
         </View>
 
         <View>
-          <Text style={{color: '#fff', fontSize: 22, marginLeft: 30}}>
+          <Text style={{color: '#fff', fontSize: 22, marginLeft: 20}}>
             Available On
           </Text>
           <View
             style={{
-              width: 190,
+              width: 120,
               height: 1,
               backgroundColor: 'tomato',
               marginTop: 5,
               marginBottom: 5,
-              marginLeft: 30,
+              marginLeft: 20,
             }}
           />
           <View style={{marginLeft: 30}}>
@@ -555,9 +553,19 @@ const MovieDetailComponent = props => {
         </View>
 
         <View style={{marginTop: 10}}>
-          <Text style={{color: '#fff', fontSize: 22, marginLeft: 30}}>
+          <Text style={{color: '#fff', fontSize: 26, marginLeft: 20}}>
             Director's / Creators's
           </Text>
+          <View
+            style={{
+              width: 240,
+              height: 1,
+              backgroundColor: 'tomato',
+              marginTop: 5,
+              marginBottom: 5,
+              marginLeft: 20,
+            }}
+          />
           <View>
             <ScrollView horizontal>
               {props.directors.map((item, index) => (
@@ -570,20 +578,40 @@ const MovieDetailComponent = props => {
                       did: item.DId,
                     })
                   }>
-                  <ImageBackground
-                    resizeMode="stretch"
-                    source={{uri: item.directorImage}}
-                    style={styles.backImage}>
+                  <View style={{alignItems: 'center'}}>
+                    <View style={styles.dirImage}>
+                      <Image
+                        resizeMode="stretch"
+                        source={{uri: item.directorImage}}
+                        style={{width: '100%', height: '100%'}}
+                      />
+                    </View>
                     <Text style={{color: '#fff'}}>{item.directorName}</Text>
-                  </ImageBackground>
+                  </View>
                 </TouchableNativeFeedback>
               ))}
             </ScrollView>
           </View>
 
-          <Text style={{color: '#fff', fontSize: 22, marginLeft: 30}}>
+          <Text
+            style={{
+              color: '#fff',
+              fontSize: 26,
+              marginLeft: 20,
+              marginTop: 30,
+            }}>
             Actor(s)
           </Text>
+          <View
+            style={{
+              width: 90,
+              height: 1,
+              backgroundColor: 'tomato',
+              marginTop: 5,
+              marginBottom: 5,
+              marginLeft: 20,
+            }}
+          />
           <View>
             <ScrollView horizontal>
               {props.stars.map((item, index) => (
@@ -596,12 +624,14 @@ const MovieDetailComponent = props => {
                       aid: item.actorId,
                     })
                   }>
-                  <ImageBackground
-                    resizeMode="stretch"
-                    source={{uri: item.actorImage}}
-                    style={styles.backImage}>
+                  <View style={{alignItems: 'center'}}>
+                    <ImageBackground
+                      resizeMode="stretch"
+                      source={{uri: item.actorImage}}
+                      style={styles.backImage}
+                    />
                     <Text style={{color: '#fff'}}>{item.actorName}</Text>
-                  </ImageBackground>
+                  </View>
                 </TouchableNativeFeedback>
               ))}
             </ScrollView>
@@ -609,9 +639,25 @@ const MovieDetailComponent = props => {
         </View>
 
         <View style={{marginTop: 10}}>
-          <Text style={{color: '#fff', fontSize: 22, marginLeft: 30}}>
+          <Text
+            style={{
+              color: '#fff',
+              fontSize: 26,
+              marginLeft: 20,
+              marginTop: 20,
+            }}>
             Trailer(s)
           </Text>
+          <View
+            style={{
+              width: 100,
+              height: 1,
+              backgroundColor: 'tomato',
+              marginTop: 5,
+              marginBottom: 5,
+              marginLeft: 20,
+            }}
+          />
           <ScrollView horizontal>
             {props.trailer.map((item, index) => (
               <ImageBackground
@@ -646,9 +692,19 @@ const MovieDetailComponent = props => {
             ))}
           </ScrollView>
 
-          <Text style={{color: '#fff', fontSize: 22, marginLeft: 30}}>
+          <Text style={{color: '#fff', fontSize: 22, marginLeft: 20}}>
             Critic(s)
           </Text>
+          <View
+            style={{
+              width: 100,
+              height: 1,
+              backgroundColor: 'tomato',
+              marginTop: 5,
+              marginBottom: 5,
+              marginLeft: 20,
+            }}
+          />
           <ScrollView horizontal>
             {props.critics.map((item, index) => (
               <ImageBackground
@@ -689,10 +745,20 @@ const MovieDetailComponent = props => {
               color: '#fff',
               fontSize: 20,
               fontWeight: 'bold',
-              marginLeft: 30,
+              marginLeft: 20,
             }}>
             You May Also Like It
           </Text>
+          <View
+            style={{
+              width: 180,
+              height: 1,
+              backgroundColor: 'tomato',
+              marginTop: 5,
+              marginBottom: 5,
+              marginLeft: 20,
+            }}
+          />
         </View>
         <YouMayAlsoLikeIt
           Genres={props.genres}
@@ -778,12 +844,17 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-end',
   },
   backImage: {
-    width: 150,
-    height: 120,
+    width: 110,
+    height: 105,
     margin: 10,
-    padding: 10,
-    justifyContent: 'flex-end',
-    borderRadius: 10,
+    borderRadius: 110 / 2,
+    overflow: 'hidden',
+  },
+  dirImage: {
+    width: 110,
+    height: 105,
+    margin: 10,
+    borderRadius: 110 / 2,
     overflow: 'hidden',
   },
 });

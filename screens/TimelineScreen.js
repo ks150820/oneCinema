@@ -111,7 +111,7 @@ const TimelineScreen = ({navigation, route}) => {
         </View>
       ) : (
         <View style={{marginTop: 10}}>
-          {timelineData1  && timelineData1[0] && timelineData1[0].length === 0 ? (
+          {timelineData1  && timelineData1[0] && timelineData1[0].length === 0 && timelineData1[1] && timelineData1[1].length === 0 && timelineData1[2] && timelineData1[2].length === 0 ? (
             <Text style={{color: '#fff', textAlign: 'center'}}>
               No Movies Found !
             </Text>

@@ -101,12 +101,11 @@ const Home = ({navigation}) => {
 
       if (initialUrl.includes('Details')) {
         const lastItem = initialUrl.substring(initialUrl.lastIndexOf('/') + 1);
-        console.log('URL ==-->>>', lastItem);
         navigation.navigate('Movie Detail', {movieId: lastItem});
       }
     };
 
-    getUrl();
+    return getUrl();
   }, []);
 
   useEffect(() => {
